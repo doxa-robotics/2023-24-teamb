@@ -51,13 +51,10 @@ pushers = PneumaticsGroup(pusher1, pusher2)
 
 controller = Controller()
 
-
 def R1_open():
     pushers.open()
 
-
 controller.buttonR1.pressed(R1_open)
-
 
 def driver_control():
     while True:
