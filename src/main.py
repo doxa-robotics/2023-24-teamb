@@ -70,7 +70,7 @@ def driver_control():
         wait(20)
 
 
-def autonomous_control():
+def autonomous_defense1():
     drivetrain.drive_for(FORWARD, 1200, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     drivetrain.turn_for(LEFT, 90)
