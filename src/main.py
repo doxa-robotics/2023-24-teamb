@@ -51,12 +51,16 @@ pushers = PneumaticsGroup(pusher1, pusher2)
 
 controller = Controller()
 
+
 def R1_open():
     pushers.open()
 
+
 controller.buttonR1.pressed(R1_open)
 
+
 def driver_control():
+    last_pressed = False
     while True:
         # Spin the left and right groups based on the controller
         left_group.spin(
@@ -68,6 +72,13 @@ def driver_control():
             controller.axis3.position() - controller.axis1.position(),
             VelocityUnits.PERCENT)
         wait(20)
+
+        if controller.buttonA.pressing() and not last_pressed:
+            if pushers.value():
+                pushers.close()
+            else:
+                pushers.open()
+        last_pressed = controller.buttonA.pressing()
 
 
 def autonomous_control():
