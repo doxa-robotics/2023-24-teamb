@@ -108,4 +108,22 @@ def autonomous_offense1():
                          )
 
 
+def autonomous_offense2():
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100,
+                         )
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+
+
 driver_control()
