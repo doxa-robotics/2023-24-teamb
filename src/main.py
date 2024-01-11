@@ -71,17 +71,63 @@ def autonomous_defense1():
 
 
 def autonomous_offense1():
+    """ Offense 1: Goes left side for the goal """
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100,
+                         )
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+
+
+def autonomous_offense2():
+    """Offense 2: Goes right side for the goal """
     drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100,
                          )
     drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
-    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
     drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+
+
+def driver_controll3r():
+    """Challenge Made The Driver Control"""
+
+    def axis1():
+        right_group.set_position(controller.axis1.position(), DEGREES)
+    controller.axis1.changed(axis1)
+
+    def axis3():
+        left_group.set_position(controller.axis3.position(), DEGREES)
+    controller.axis3.changed(axis3)
+
+    def buttonRight():
+
+        if controller.buttonRight.pressed:
+            left_group.spin_to_position(90, DEGREES)
+        if controller.buttonRight.released:
+            left_group.stop
+
+
+wait(30, MSEC)
 
 
 driver_control()
