@@ -54,10 +54,10 @@ def driver_control():
         last_pressed_s = controller.buttonR1.pressing()
 
         if controller.buttonL1.pressing() and not last_pressed_p:
-            if panels.value():
-                panels.close()
+            if salute.value():
+                salute.close()
             else:
-                panels.open()
+                salute.open()
         last_pressed_p = controller.buttonL1.pressing()
 
 
