@@ -131,16 +131,21 @@ def autonomous_offense2():
 def driver_controll3r():
     """Challenge Made The Driver Control"""
 
-    def onevent_Controlleraxis1Changed_0():
-        right_group.set_position(Controller.axis1.position(), DEGREES)
+    def axis1():
+        right_group.set_position(controller.axis1.position(), DEGREES)
+    controller.axis1.changed(axis1)
 
-    def onevent_Controlleraxis3Changed_0():
-        left_group.set_position(Controller.axis3.position(), DEGREES)
+    def axis3():
+        left_group.set_position(controller.axis3.position(), DEGREES)
+    controller.axis3.changed(axis3)
 
-    def onevent_COntrollerbuttonRight_pressed_0():
-        left_group.spin_to_position(90, DEGREES)
+    def buttonRight():
 
-
+     if controller.buttonRight.pressed  
+         left_group.spin_to_position(90, DEGREES)
+     if controller.buttonRight.released 
+         left_group.stop
+      
 wait(30, MSEC)
 
 
