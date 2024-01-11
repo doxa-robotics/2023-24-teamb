@@ -141,11 +141,12 @@ def driver_controll3r():
 
     def buttonRight():
 
-     if controller.buttonRight.pressed  
-         left_group.spin_to_position(90, DEGREES)
-     if controller.buttonRight.released 
-         left_group.stop
-      
+        if controller.buttonRight.pressed:
+            left_group.spin_to_position(90, DEGREES)
+        if controller.buttonRight.released:
+            left_group.stop
+
+
 wait(30, MSEC)
 
 
