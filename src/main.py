@@ -21,64 +21,44 @@ right_group = MotorGroup(motor_right_1, motor_right_2,
 
 inertia_sensor = Inertial(Ports.PORT1)
 
-drivetrain = SmartDrive(left_group, right_group, inertia_sensor, 255)
-
-
-class PneumaticsGroup:
-    children: list[Pneumatics]
-
-    def __init__(self, *pneumatics: Pneumatics) -> None:
-        self.children = list(pneumatics)
-
-    def open(self):
-        for child in self.children:
-            child.open()
-
-    def close(self):
-        for child in self.children:
-            child.close()
-
-    def value(self):
-        for child in self.children:
-            if child.value():
-                return True
-        return False
-
-
-pusher1 = Pneumatics(brain.three_wire_port.a)
-pusher2 = Pneumatics(brain.three_wire_port.c)
-pushers = PneumaticsGroup(pusher1, pusher2)
-
 controller = Controller()
 
+drivetrain = SmartDrive(left_group, right_group, inertia_sensor, 255)
 
-def R1_open():
-    pushers.open()
+panels = Pneumatics(brain.three_wire_port.a)
 
-
-controller.buttonR1.pressed(R1_open)
+salute = Pneumatics(brain.three_wire_port.e)
 
 
 def driver_control():
-    last_pressed = False
+    last_pressed_s = False
+    last_pressed_p = False
     while True:
         # Spin the left and right groups based on the controller
         left_group.spin(
             DirectionType.FORWARD,
             controller.axis3.position() + controller.axis1.position(),
             VelocityUnits.PERCENT)
+
         right_group.spin(
             DirectionType.FORWARD,
             controller.axis3.position() - controller.axis1.position(),
             VelocityUnits.PERCENT)
         wait(20)
 
-        if controller.buttonA.pressing() and not last_pressed:
-            if pushers.value():
-                pushers.close()
+        if controller.buttonR1.pressing() and not last_pressed_s:
+            if panels.value():
+                panels.close()
             else:
-                pushers.open()
-        last_pressed = controller.buttonA.pressing()
+                panels.open()
+        last_pressed_s = controller.buttonR1.pressing()
+
+        if controller.buttonL1.pressing() and not last_pressed_p:
+            if panels.value():
+                panels.close()
+            else:
+                panels.open()
+        last_pressed_p = controller.buttonL1.pressing()
 
 
 def autonomous_defense1():
@@ -87,7 +67,7 @@ def autonomous_defense1():
     drivetrain.turn_for(LEFT, 90)
     drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
-    drivetrain.turn_for(RIGHT, 90)*96
+    drivetrain.turn_for(RIGHT, 90)
 
 
 def autonomous_offense1():
