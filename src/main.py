@@ -112,11 +112,13 @@ def driver_controll3r():
     """Challenge Made The Driver Control"""
 
     def axis1():
-        right_group.set_position(controller.axis1.position(), DEGREES)
+        right_group.spin(FORWARD, controller.axis1.position(), PERCENT,
+                         VelocityPercentUnits=VelocityUnits)
     controller.axis1.changed(axis1)
 
     def axis3():
-        left_group.set_position(controller.axis3.position(), DEGREES)
+        left_group.spin(FORWARD, controller.axis3.position(), PERCENT,
+                        VelocityPercentUnits=VelocityUnits)
     controller.axis3.changed(axis3)
 
     def buttonRight():
