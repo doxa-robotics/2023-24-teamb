@@ -19,15 +19,15 @@ left_group = MotorGroup(motor_left_1, motor_left_2, motor_left_3, motor_left_3)
 right_group = MotorGroup(motor_right_1, motor_right_2,
                          motor_right_3, motor_right_4)
 
-inertia_sensor = Inertial(Ports.PORT1)
+gyro = Gyro(brain.three_wire_port.f)
 
 controller = Controller()
 
-drivetrain = SmartDrive(left_group, right_group, inertia_sensor, 255)
+drivetrain = SmartDrive(left_group, right_group, gyro, 255)
 
-panels = Pneumatics(brain.three_wire_port.a)
+panels = Pneumatics(brain.three_wire_port.e)
 
-salute = Pneumatics(brain.three_wire_port.e)
+salute = Pneumatics(brain.three_wire_port.a)
 
 
 def driver_control():
@@ -54,10 +54,10 @@ def driver_control():
         last_pressed_s = controller.buttonR1.pressing()
 
         if controller.buttonL1.pressing() and not last_pressed_p:
-            if panels.value():
-                panels.close()
+            if salute.value():
+                salute.close()
             else:
-                panels.open()
+                salute.open()
         last_pressed_p = controller.buttonL1.pressing()
 
 
