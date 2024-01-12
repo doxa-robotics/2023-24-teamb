@@ -25,9 +25,9 @@ controller = Controller()
 
 drivetrain = SmartDrive(left_group, right_group, inertia_sensor, 255)
 
-panels = Pneumatics(brain.three_wire_port.a)
+panels = Pneumatics(brain.three_wire_port.e)
 
-salute = Pneumatics(brain.three_wire_port.e)
+salute = Pneumatics(brain.three_wire_port.a)
 
 
 def driver_control():
