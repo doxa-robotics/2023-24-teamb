@@ -72,11 +72,11 @@ def autonomous_defense1():
 
 def autonomous_offense1():
     """ Offense 1: Goes left side for the goal """
-    drivetrain.drive_for(FORWARD, 575, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 750, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100,
                          )
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
     drivetrain.turn_for(LEFT, 90, DEGREES)
@@ -101,11 +101,11 @@ def autonomous_offense1():
 
 def autonomous_offense2():
     """Offense 2: Goes right side for the goal """
-    drivetrain.drive_for(FORWARD, 575, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 750, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100,
                          )
     drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
     drivetrain.turn_for(RIGHT, 90, DEGREES)
