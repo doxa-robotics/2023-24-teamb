@@ -72,21 +72,34 @@ def autonomous_defense1():
 
 def autonomous_offense():
     """ Offense 1: Goes left side for the goal """
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100,
-                         )
+    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50,)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 270, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
+    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+
+    drivetrain.drive_for(FORWARD, 450, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+    drivetrain.drive_for(REVERSE, 450, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
     drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-    drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
+    drivetrain.drive_for(FORWARD, 270, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50,)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    salute.open()
+    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50,)
 
 
 def autonomous_defense():
