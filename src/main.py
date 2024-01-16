@@ -151,5 +151,4 @@ def driver_controll3r():
 
 wait(30, MSEC)
 
-
-driver_control()
+Competition(driver_control, autonomous_offense)
