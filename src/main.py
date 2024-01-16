@@ -104,19 +104,28 @@ def autonomous_offense():
 
 def autonomous_defense():
     """Offense 2: Goes right side for the goal """
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100,
                          )
     drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 600, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 800, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 1000, DistanceUnits.MM,
+    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    """Going to the bar at last"""
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 1400, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100
+                         )
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=100
                          )
 
