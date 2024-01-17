@@ -151,4 +151,9 @@ def driver_controll3r():
 
 wait(30, MSEC)
 
-Competition(driver_control, autonomous_offense)
+
+def noop():
+    pass
+
+
+Competition(driver_control, noop)
