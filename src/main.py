@@ -61,6 +61,20 @@ def driver_control():
         last_pressed_p = controller.buttonL1.pressing()
 
 
+def autonomous_offense_1():
+    """scores 1 triball"""
+    drivetrain.drive_for(FORWARD, 600, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50,)
+    drivetrain.turn_for(LEFT, 15, DEGREES)
+    drivetrain.drive_for(FORWARD, 200, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+    drivetrain.turn_for(RIGHT, 105, DEGREES)
+    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+    drivetrain.drive_for(REVERSE, 150, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+
+
 def autonomous_defense1():
     drivetrain.drive_for(FORWARD, 1200, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
@@ -68,38 +82,6 @@ def autonomous_defense1():
     drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     drivetrain.turn_for(RIGHT, 90)
-
-
-def autonomous_offense():
-    """ Offense 1: Goes left side for the goal """
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50,)
-    drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 270, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-
-    drivetrain.drive_for(FORWARD, 450, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.drive_for(REVERSE, 450, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 270, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50,)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    salute.open()
-    drivetrain.drive_for(FORWARD, 300, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50,)
 
 
 def autonomous_defense():
@@ -156,4 +138,5 @@ def noop():
     pass
 
 
-Competition(driver_control, noop)
+# Competition(autonomous_offense_1, driver_control)
+autonomous_offense_1()
