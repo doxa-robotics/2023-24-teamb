@@ -113,25 +113,6 @@ def autonomous_defense():
                          )
 
 
-def driver_controll3r():
-    """Challenge Made The Driver Control"""
-
-    def axis1():
-        right_group.set_position(controller.axis1.position(), DEGREES)
-    controller.axis1.changed(axis1)
-
-    def axis3():
-        left_group.set_position(controller.axis3.position(), DEGREES)
-    controller.axis3.changed(axis3)
-
-    def buttonRight():
-
-        if controller.buttonRight.pressed:
-            left_group.spin_to_position(90, DEGREES)
-        if controller.buttonRight.released:
-            left_group.stop
-
-
 def autonomous_skills():
 
     drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
