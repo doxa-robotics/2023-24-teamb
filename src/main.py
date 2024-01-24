@@ -85,38 +85,22 @@ def autonomous_defense_1():
     drivetrain.turn_for(RIGHT, 90)
 
 
-def autonomous_defense():
-    """Offense 2: Goes right side for the goal """
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100,
-                         )
-    drivetrain.turn_for(LEFT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 600, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 800, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-    """Going to the bar at last"""
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 1400, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
-    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100
-                         )
-
-
 def autonomous_skills():
-
-    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=100)
+    run(1300)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    run(700)
+    drivetrain.turn_for(LEFT, 45, DEGREES)
+    run(500)
+    run(-100)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    run(-700)
+    drivetrain.turn_for(LEFT, 45, DEGREES)
+    run(300)
+    drivetrain.turn_for(RIGHT, 45, DEGREES)
+    run(-300)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    run(300)
+    run(-300)
 
 
 wait(30, MSEC)
