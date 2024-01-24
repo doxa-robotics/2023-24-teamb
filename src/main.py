@@ -83,6 +83,7 @@ def autonomous_offense_1():
 
 
 def autoDefe():
+    """Move a ball from corner and touch the bar"""
     drivetrain.turn_for(LEFT, 90)
     # Arm up
     salute.open()
