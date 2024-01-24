@@ -79,17 +79,17 @@ def autonomous_offense_1():
 def autoDefe():
     drivetrain.turn_for(LEFT, 90)
     # Arm up
-    salute.open
+    salute.open()
     drivetrain.drive_for(FORWARD, 15, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     # Arm down
-    salute.close
+    salute.close()
 
     drivetrain.turn_for(LEFT, False, -10)
     drivetrain.drive_for(FORWARD, False, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     # Arm up
-    salute.open
+    salute.open()
 
     # Going back
     drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
@@ -98,7 +98,7 @@ def autoDefe():
 
     drivetrain.turn_for(RIGHT, 180)
     # Arm up
-    salute.open
+    salute.open()
     drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
 
