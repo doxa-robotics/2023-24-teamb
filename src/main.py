@@ -21,6 +21,11 @@ right_group = MotorGroup(motor_right_1, motor_right_2,
 
 gyro = Gyro(brain.three_wire_port.f)
 
+gyro.calibrate()
+
+while gyro.is_calibrating():
+    wait(50)
+
 controller = Controller()
 
 drivetrain = SmartDrive(left_group, right_group, gyro, 255)
@@ -63,17 +68,18 @@ def driver_control():
 
 def run(distance):
     drivetrain.drive_for(FORWARD, distance, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
+                         units_v=VelocityUnits.PERCENT, velocity=30)
 
 
 def autonomous_offense_1():
     """scores 1 triball"""
-    run(600)
-    drivetrain.turn_for(LEFT, 15, DEGREES)
-    run(200)
-    drivetrain.turn_for(RIGHT, 105, DEGREES)
-    run(350)
-    run(-150)
+    run(-270)
+    drivetrain.turn_for(LEFT, 25, DEGREES)
+    panels.open()
+    run(-610)
+    drivetrain.turn_for(RIGHT, 125, DEGREES)
+    run(-350)
+    run(150)
 
 
 def autonomous_defense_1():
