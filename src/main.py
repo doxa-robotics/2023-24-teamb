@@ -86,21 +86,22 @@ def autonomous_defense_1():
 
 
 def autonomous_skills():
-    run(1300)
+    run(-1300)
     drivetrain.turn_for(LEFT, 30, DEGREES)
-    run(700)
-    drivetrain.turn_for(LEFT, 45, DEGREES)
-    run(500)
-    run(-100)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    panels.open
     run(-700)
     drivetrain.turn_for(LEFT, 45, DEGREES)
-    run(300)
+    run(-500)
+    run(100)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    run(700)
+    drivetrain.turn_for(LEFT, 45, DEGREES)
+    run(-300)
     drivetrain.turn_for(RIGHT, 45, DEGREES)
-    run(-300)
-    drivetrain.turn_for(LEFT, 30, DEGREES)
     run(300)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
     run(-300)
+    run(300)
 
 
 wait(30, MSEC)
