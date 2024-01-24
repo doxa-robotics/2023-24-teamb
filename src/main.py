@@ -61,21 +61,22 @@ def driver_control():
         last_pressed_p = controller.buttonL1.pressing()
 
 
+def run(distance):
+    drivetrain.drive_for(FORWARD, distance, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=50)
+
+
 def autonomous_offense_1():
     """scores 1 triball"""
-    drivetrain.drive_for(FORWARD, 600, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50,)
+    run(600)
     drivetrain.turn_for(LEFT, 15, DEGREES)
-    drivetrain.drive_for(FORWARD, 200, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
+    run(200)
     drivetrain.turn_for(RIGHT, 105, DEGREES)
-    drivetrain.drive_for(FORWARD, 350, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
-    drivetrain.drive_for(REVERSE, 150, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=50)
+    run(350)
+    run(-150)
 
 
-def autonomous_defense1():
+def autonomous_defense_1():
     drivetrain.drive_for(FORWARD, 1200, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     drivetrain.turn_for(LEFT, 90)
@@ -129,6 +130,12 @@ def driver_controll3r():
             left_group.spin_to_position(90, DEGREES)
         if controller.buttonRight.released:
             left_group.stop
+
+
+def autonomous_skills():
+
+    drivetrain.drive_for(FORWARD, 900, DistanceUnits.MM,
+                         units_v=VelocityUnits.PERCENT, velocity=100)
 
 
 wait(30, MSEC)
