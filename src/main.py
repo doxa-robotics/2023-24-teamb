@@ -115,15 +115,6 @@ def autoDefe():
                          units_v=VelocityUnits.PERCENT)
 
 
-def autonomous_defense_1():
-    drivetrain.drive_for(FORWARD, 1200, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
-    drivetrain.turn_for(LEFT, 90)
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
-    drivetrain.turn_for(RIGHT, 90)
-
-
 def autonomous_skills():
     run(-1300)
     drivetrain.turn_for(LEFT, 30, DEGREES)
