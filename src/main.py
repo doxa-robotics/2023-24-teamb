@@ -90,23 +90,18 @@ def autonomous_offense_1():
 def autonomous_defense_1():
     """Move a ball from corner and touch the bar"""
     salute.open()
-
     wait(1)
-
     run(-50)
-
-    drivetrain.turn_for(RIGHT, 180)
-
+    drivetrain.turn_for(LEFT, 180)
   # Arm up
     salute.close()
-
-    drivetrain.turn_for(RIGHT, 200)
-    run(500)
-
-    drivetrain.turn_for(RIGHT, 100)
-
+    drivetrain.turn_for(LEFT, 180)
+    run(50)
+    drivetrain.turn_for(LEFT, 90)
+    run(50)
+    drivetrain.turn_for(LEFT, 20)
     # Going back
-    run(500)
+    run(30)
 
 
 def autonomous_skills():
@@ -133,6 +128,3 @@ wait(30, MSEC)
 
 def noop():
     pass
-
-
-Competition(autonomous_offense_1, driver_control)
