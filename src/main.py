@@ -97,7 +97,7 @@ def autonomous_defense_1():
     # Arm down
     salute.close()
 
-    drivetrain.turn_for(LEFT, False, -10)
+    drivetrain.turn_for(LEFT, False, 10)
     drivetrain.drive_for(FORWARD, False, 500, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT)
     # Arm up
