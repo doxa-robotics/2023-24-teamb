@@ -92,27 +92,24 @@ def autonomous_defense_1():
     drivetrain.turn_for(LEFT, 90)
     # Arm up
     salute.open()
-    drivetrain.drive_for(FORWARD, 15, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
+    run(150)
     # Arm down
     salute.close()
 
-    drivetrain.turn_for(LEFT, False, 10)
-    drivetrain.drive_for(FORWARD, False, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
+    drivetrain.turn_for(LEFT, 10, False)
+    run(500)
+
     # Arm up
     salute.open()
 
     # Going back
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
+    run(500)
     drivetrain.turn_for(LEFT, 10)
-
     drivetrain.turn_for(RIGHT, 180)
+
     # Arm up
     salute.open()
-    drivetrain.drive_for(FORWARD, 500, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT)
+    run(500)
 
 
 def autonomous_skills():
