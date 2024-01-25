@@ -93,7 +93,7 @@ def autonomous_defense_1():
 
     wait(1)
 
-    run(-150)
+    run(-50)
 
     drivetrain.turn_for(LEFT, 180)
   # Arm u
