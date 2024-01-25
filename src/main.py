@@ -80,7 +80,11 @@ def autonomous_offense_1():
     run(-410)
     drivetrain.turn_for(RIGHT, 115, DEGREES)
     run(-410)
-    run(150)
+    run(140)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    run(800)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    run(300)
 
 
 def autoDefe():
