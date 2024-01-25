@@ -81,10 +81,10 @@ def autonomous_offense_1():
     drivetrain.turn_for(RIGHT, 120, DEGREES)
     run(-410)
     run(140)
-    # drivetrain.turn_for(LEFT, 90, DEGREES)
-    # run(800)
-    # drivetrain.turn_for(RIGHT, 90, DEGREES)
-    # run(300)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    run(800)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    run(300)
 
 
 def autonomous_defense_1():
@@ -105,20 +105,26 @@ def autonomous_defense_1():
 
 
 def autonomous_skills():
+    drivetrain.turn_for(LEFT, 35, DEGREES)
+    run(-350)
+    wait(3000, MSEC)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    run(-300)
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
     run(-1300)
-    drivetrain.turn_for(LEFT, 30, DEGREES)
+    drivetrain.turn_for(RIGHT, 30, DEGREES)
     panels.open
     run(-700)
-    drivetrain.turn_for(LEFT, 45, DEGREES)
+    drivetrain.turn_for(RIGHT, 45, DEGREES)
     run(-500)
     run(100)
-    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
     run(700)
-    drivetrain.turn_for(LEFT, 45, DEGREES)
-    run(-300)
     drivetrain.turn_for(RIGHT, 45, DEGREES)
+    run(-300)
+    drivetrain.turn_for(LEFT, 45, DEGREES)
     run(300)
-    drivetrain.turn_for(LEFT, 30, DEGREES)
+    drivetrain.turn_for(RIGHT, 30, DEGREES)
     run(-300)
     run(300)
 
@@ -128,3 +134,6 @@ wait(30, MSEC)
 
 def noop():
     pass
+
+
+autonomous_skills()
