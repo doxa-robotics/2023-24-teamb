@@ -87,7 +87,7 @@ def autonomous_offense_1():
     # run(300)
 
 
-def autoDefe():
+def autonomous_defense_1():
     """Move a ball from corner and touch the bar"""
     drivetrain.turn_for(LEFT, 90)
     # Arm up
