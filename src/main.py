@@ -103,6 +103,12 @@ def autonomous_defense_1():
     run(550)
 
 
+def autonomous_d():
+    """If didn't work: Go touching a bar from defence start without touching triball"""
+    drivetrain.turn_for(RIGHT, 90)
+    run(580)
+
+
 def autonomous_skills():
     run(-1300)
     drivetrain.turn_for(LEFT, 30, DEGREES)
