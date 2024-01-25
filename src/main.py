@@ -90,21 +90,10 @@ def autonomous_offense_1():
 def autonomous_defense_1():
     """Move a ball from corner and touch the bar"""
     salute.open()
-
     wait(1)
 
-    run(-50)
-
-    drivetrain.turn_for(LEFT, 180)
-  # Arm u
-
+    drivetrain.turn_for(RIGHT, 180)
     salute.close()
-
-    drivetrain.turn_for(LEFT, 200)
-
-    run(500)
-
-    drivetrain.turn_for(RIGHT, 100)
 
     # Going back
     run(500)
