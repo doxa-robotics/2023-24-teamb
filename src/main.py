@@ -91,17 +91,34 @@ def autonomous_defense_1():
     """Move a ball from corner and touch the bar"""
     salute.open()
     wait(1)
-    run(-50)
+    run(-424.25)
     drivetrain.turn_for(LEFT, 180)
   # Arm up
     salute.close()
     drivetrain.turn_for(LEFT, 180)
-    run(50)
+    drivetrain.turn_for(LEFT, 45)
+    run(600)
     drivetrain.turn_for(LEFT, 90)
-    run(50)
-    drivetrain.turn_for(LEFT, 20)
     # Going back
-    run(30)
+    run(550)
+
+
+def autonomous_defense_2():
+    """ (Zachary wrote) Moves a ball from the corner and touches the bar."""
+    salute.open()  # down
+    wait(1000)  # in ms, so that's one second
+    run(-600)
+    salute.close()  # up
+    drivetrain.turn_for(LEFT, 90)
+    run(600)
+    drivetrain.turn_for(LEFT, 45)
+    run(1500)
+
+
+def autonomous_d():
+    """If didn't work: Go touching a bar from defence start without touching triball"""
+    drivetrain.turn_for(RIGHT, 90)
+    run(580)
 
 
 def autonomous_skills():
