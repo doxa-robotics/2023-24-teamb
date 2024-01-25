@@ -10,7 +10,7 @@ motor_left_1 = Motor(Ports.PORT4, True)
 motor_left_2 = Motor(Ports.PORT3, True)
 motor_left_3 = Motor(Ports.PORT2, True)
 motor_left_4 = Motor(Ports.PORT1, True)
-motor_right_1 = Motor(Ports.PORT6)
+motor_right_1 = Motor(Ports.PORT10)
 motor_right_2 = Motor(Ports.PORT9)
 motor_right_3 = Motor(Ports.PORT8)
 motor_right_4 = Motor(Ports.PORT7)
@@ -75,10 +75,11 @@ def autonomous_offense_1():
     """scores 1 triball"""
     run(-270)
     drivetrain.turn_for(LEFT, 25, DEGREES)
+    run(-150)
     panels.open()
-    run(-610)
-    drivetrain.turn_for(RIGHT, 125, DEGREES)
-    run(-350)
+    run(-410)
+    drivetrain.turn_for(RIGHT, 115, DEGREES)
+    run(-410)
     run(150)
 
 
