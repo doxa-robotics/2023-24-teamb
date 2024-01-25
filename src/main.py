@@ -66,25 +66,26 @@ def driver_control():
         last_pressed_p = controller.buttonL1.pressing()
 
 
-def run(distance):
+def run(distance, velocity=40):
     drivetrain.drive_for(FORWARD, distance, DistanceUnits.MM,
-                         units_v=VelocityUnits.PERCENT, velocity=30)
+                         units_v=VelocityUnits.PERCENT, velocity=velocity)
 
 
 def autonomous_offense_1():
     """scores 1 triball"""
-    run(-270)
-    drivetrain.turn_for(LEFT, 25, DEGREES)
-    run(-180)
+    run(-270, 50)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    run(-185)
     panels.open()
     run(-370)
-    drivetrain.turn_for(RIGHT, 120, DEGREES)
+    drivetrain.turn_for(RIGHT, 125, DEGREES, velocity=20, units_v=RPM)
     run(-410)
-    run(140)
-    drivetrain.turn_for(LEFT, 90, DEGREES)
-    run(800)
+    run(170)
+    panels.close()
+    drivetrain.turn_for(LEFT, 80, DEGREES)
+    run(800, 85)
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    run(300)
+    run(350, 70)
 
 
 def autonomous_defense_1():
@@ -153,4 +154,4 @@ def noop():
     pass
 
 
-autonomous_skills()
+Competition(driver_control, autonomous_offense_1)
