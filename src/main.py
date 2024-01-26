@@ -119,6 +119,19 @@ def autonomous_defense_2():
     run(310)
 
 
+def auton_o2():
+    """ taipei asked for this """
+    run(700)
+    run(-700)
+    drivetrain.turn_for(LEFT, 90)
+    run(1200)
+    drivetrain.turn_for(RIGHT, 45)
+    panels.open()
+    run(600)
+    drivetrain.turn_for(RIGHT, 90)
+    run(1000)
+
+
 def autonomous_d():
     """If didn't work: Go touching a bar from defence start without touching triball"""
     drivetrain.turn_for(RIGHT, 90)
@@ -160,4 +173,4 @@ def noop():
     pass
 
 
-Competition(driver_control, autonomous_defense_2)
+Competition(driver_control, auton_o2)
