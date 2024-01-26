@@ -151,23 +151,23 @@ def autonomous_skills():
 
 
 def autonomous_skills_back_and_forth():
-    drivetrain.turn_for(RIGHT, 35, DEGREES)
-    run(-400)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    run(-300)
     panels.open()
     wait(4000, MSEC)
     panels.close()
     drivetrain.turn_for(LEFT, 180, DEGREES)
     run(-300)
-    drivetrain.turn_for(LEFT, 35, DEGREES)
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
     run(-1050)
     run(1050)
     drivetrain.turn_for(RIGHT, 35, DEGREES)
     run(300)
-    drivetrain.turn_for(RIGHT, 180, DEGREES)
-    wait(4000, MSEC)
     drivetrain.turn_for(LEFT, 180, DEGREES)
+    wait(4000, MSEC)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
     run(-300)
-    drivetrain.turn_for(LEFT, 35, DEGREES)
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
     run(-1050)
 
 
@@ -178,4 +178,5 @@ def noop():
     pass
 
 
-Competition(driver_control, autonomous_skills_back_and_forth)
+# Competition(driver_control, autonomous_skills_back_and_forth)
+autonomous_skills_back_and_forth()
