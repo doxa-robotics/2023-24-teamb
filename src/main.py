@@ -107,7 +107,7 @@ def autonomous_defense_1():
 def autonomous_defense_2():
     """ (Zachary wrote) Moves a ball from the corner and touches the bar."""
     run(260)
-    run(70, 10)
+    run(80, 10)
     # drivetrain.turn_for(LEFT, 45)
     salute.open()  # down
     wait(1000)  # in ms, so that's one second
@@ -116,7 +116,7 @@ def autonomous_defense_2():
     drivetrain.turn_for(LEFT, 65)
     run(350)
     drivetrain.turn_for(LEFT, 90)
-    run(350)
+    run(310)
 
 
 def autonomous_d():
