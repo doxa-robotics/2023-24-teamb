@@ -175,4 +175,4 @@ def noop():
     pass
 
 
-Competition(driver_control, auton_o2)
+Competition(driver_control, autonomous_defense_2)
