@@ -106,14 +106,17 @@ def autonomous_defense_1():
 
 def autonomous_defense_2():
     """ (Zachary wrote) Moves a ball from the corner and touches the bar."""
+    run(260)
+    run(70, 10)
+    # drivetrain.turn_for(LEFT, 45)
     salute.open()  # down
     wait(1000)  # in ms, so that's one second
-    run(-600)
+    run(-300, 20)
     salute.close()  # up
+    drivetrain.turn_for(LEFT, 65)
+    run(350)
     drivetrain.turn_for(LEFT, 90)
-    run(600)
-    drivetrain.turn_for(LEFT, 45)
-    run(1500)
+    run(350)
 
 
 def autonomous_d():
@@ -124,13 +127,16 @@ def autonomous_d():
 
 def autonomous_skills():
     drivetrain.turn_for(LEFT, 35, DEGREES)
-    run(-350)
+    run(-400)
+    panels.open()
     wait(3000, MSEC)
+    panels.close()
     drivetrain.turn_for(RIGHT, 180, DEGREES)
     run(-300)
     drivetrain.turn_for(RIGHT, 35, DEGREES)
-    run(-1300)
-    drivetrain.turn_for(RIGHT, 30, DEGREES)
+    run(-1050)
+    panels.open()
+    """drivetrain.turn_for(RIGHT, 30, DEGREES)
     panels.open
     run(-700)
     drivetrain.turn_for(RIGHT, 45, DEGREES)
@@ -144,7 +150,7 @@ def autonomous_skills():
     run(300)
     drivetrain.turn_for(RIGHT, 30, DEGREES)
     run(-300)
-    run(300)
+    run(300)"""
 
 
 wait(30, MSEC)
@@ -154,4 +160,4 @@ def noop():
     pass
 
 
-Competition(driver_control, autonomous_offense_1)
+Competition(driver_control, autonomous_defense_2)
