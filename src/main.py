@@ -73,8 +73,7 @@ def run(distance, velocity=40):
 
 def autonomous_offense_1():
     """scores 1 triball"""
-    run(-160, 60)
-    run(-60)
+    run(-220, 60)
     drivetrain.turn_for(LEFT, 25, DEGREES)
     run(-170)
     panels.open()
@@ -88,22 +87,6 @@ def autonomous_offense_1():
     drivetrain.turn_for(RIGHT, 90, DEGREES)
     run(320, 70)
     run(90, 10)
-
-
-def autonomous_defense_1():
-    """Move a ball from corner and touch the bar"""
-    salute.open()
-    wait(1000)
-    run(-424.25)
-    drivetrain.turn_for(LEFT, 180)
-    # Arm up
-    salute.close()
-    drivetrain.turn_for(LEFT, 180)
-    drivetrain.turn_for(LEFT, 45)
-    run(600)
-    drivetrain.turn_for(LEFT, 90)
-    # Going back
-    run(550)
 
 
 def autonomous_defense_2():
@@ -149,8 +132,7 @@ def autonomous_skills():
     drivetrain.turn_for(LEFT, 180, DEGREES)
     run(-300)
     drivetrain.turn_for(LEFT, 35, DEGREES)
-    run(-1050)
-    panels.open()"""
+    run(-1050)"""
     drivetrain.turn_for(LEFT, 30, DEGREES)
     panels.open
     run(-700)
@@ -175,4 +157,4 @@ def noop():
     pass
 
 
-Competition(driver_control, autonomous_defense_2)
+Competition(driver_control, auton_o2)
