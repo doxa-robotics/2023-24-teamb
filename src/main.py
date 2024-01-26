@@ -66,7 +66,7 @@ def driver_control():
         last_pressed_p = controller.buttonL1.pressing()
 
 
-def run(distance, velocity=40):
+def run(distance, velocity=50):
     drivetrain.drive_for(FORWARD, distance, DistanceUnits.MM,
                          units_v=VelocityUnits.PERCENT, velocity=velocity)
 
@@ -92,12 +92,12 @@ def autonomous_offense_1():
 def autonomous_defense_2():
     """ (Zachary wrote) Moves a ball from the corner and touches the bar."""
     run(260)
-    run(100, 10)
+    run(110, 10)
     # drivetrain.turn_for(LEFT, 45)
-    salute.open()  # down
-    wait(1000)  # in ms, so that's one second
+    salute.open()
+    wait(1000)
     run(-300, 20)
-    salute.close()  # up
+    salute.close()
     drivetrain.turn_for(LEFT, 65)
     run(350)
     drivetrain.turn_for(LEFT, 90)
@@ -150,6 +150,27 @@ def autonomous_skills():
     run(300)
 
 
+def autonomous_skills_back_and_forth():
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    run(-400)
+    panels.open()
+    wait(4000, MSEC)
+    panels.close()
+    drivetrain.turn_for(LEFT, 180, DEGREES)
+    run(-300)
+    drivetrain.turn_for(LEFT, 35, DEGREES)
+    run(-1050)
+    run(1050)
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    run(300)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    wait(4000, MSEC)
+    drivetrain.turn_for(LEFT, 180, DEGREES)
+    run(-300)
+    drivetrain.turn_for(LEFT, 35, DEGREES)
+    run(-1050)
+
+
 wait(30, MSEC)
 
 
@@ -157,4 +178,4 @@ def noop():
     pass
 
 
-Competition(driver_control, auton_o2)
+Competition(driver_control, autonomous_skills_back_and_forth)
