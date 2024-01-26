@@ -73,19 +73,21 @@ def run(distance, velocity=40):
 
 def autonomous_offense_1():
     """scores 1 triball"""
-    run(-270, 50)
-    drivetrain.turn_for(LEFT, 30, DEGREES)
-    run(-185)
+    run(-160, 60)
+    run(-60)
+    drivetrain.turn_for(LEFT, 25, DEGREES)
+    run(-170)
     panels.open()
-    run(-370)
+    run(-360)
     drivetrain.turn_for(RIGHT, 125, DEGREES, velocity=20, units_v=RPM)
-    run(-410)
-    run(170)
+    run(-410, 60)
+    run(180, 60)
     panels.close()
-    drivetrain.turn_for(LEFT, 80, DEGREES)
-    run(800, 85)
+    drivetrain.turn_for(LEFT, 115, DEGREES)
+    run(750, 85)
     drivetrain.turn_for(RIGHT, 90, DEGREES)
-    run(350, 70)
+    run(320, 70)
+    run(90, 10)
 
 
 def autonomous_defense_1():
@@ -139,31 +141,31 @@ def autonomous_d():
 
 
 def autonomous_skills():
-    drivetrain.turn_for(LEFT, 35, DEGREES)
+    """drivetrain.turn_for(RIGHT, 35, DEGREES)
     run(-400)
     panels.open()
     wait(3000, MSEC)
     panels.close()
-    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.turn_for(LEFT, 180, DEGREES)
     run(-300)
-    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    drivetrain.turn_for(LEFT, 35, DEGREES)
     run(-1050)
-    panels.open()
-    """drivetrain.turn_for(RIGHT, 30, DEGREES)
+    panels.open()"""
+    drivetrain.turn_for(LEFT, 30, DEGREES)
     panels.open
     run(-700)
-    drivetrain.turn_for(RIGHT, 45, DEGREES)
+    drivetrain.turn_for(LEFT, 45, DEGREES)
     run(-500)
     run(100)
-    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
     run(700)
-    drivetrain.turn_for(RIGHT, 45, DEGREES)
-    run(-300)
     drivetrain.turn_for(LEFT, 45, DEGREES)
-    run(300)
-    drivetrain.turn_for(RIGHT, 30, DEGREES)
     run(-300)
-    run(300)"""
+    drivetrain.turn_for(RIGHT, 45, DEGREES)
+    run(300)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    run(-300)
+    run(300)
 
 
 wait(30, MSEC)
