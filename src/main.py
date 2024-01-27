@@ -35,6 +35,14 @@ panels = Pneumatics(brain.three_wire_port.e)
 salute = Pneumatics(brain.three_wire_port.a)
 
 
+def convert_damped_controller(val):
+    value = math.pow(0.1*val, 2)
+    if val < 0:
+        return -value
+    else:
+        return value
+
+
 def driver_control():
     last_pressed_s = False
     last_pressed_p = False
@@ -42,12 +50,14 @@ def driver_control():
         # Spin the left and right groups based on the controller
         left_group.spin(
             DirectionType.FORWARD,
-            controller.axis3.position() + controller.axis1.position(),
+            convert_damped_controller(controller.axis3.position(
+            )) + convert_damped_controller(controller.axis1.position()),
             VelocityUnits.PERCENT)
 
         right_group.spin(
             DirectionType.FORWARD,
-            controller.axis3.position() - controller.axis1.position(),
+            convert_damped_controller(controller.axis3.position(
+            )) - convert_damped_controller(controller.axis1.position()),
             VelocityUnits.PERCENT)
         wait(20)
 
@@ -156,18 +166,19 @@ def autonomous_skills_back_and_forth():
     panels.open()
     wait(4000, MSEC)
     panels.close()
-    drivetrain.turn_for(LEFT, 180, DEGREES)
-    run(-300)
-    drivetrain.turn_for(RIGHT, 35, DEGREES)
-    run(-1050)
-    run(1050)
-    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    # drivetrain.turn_for(LEFT, 180, DEGREES)
     run(300)
-    drivetrain.turn_for(LEFT, 180, DEGREES)
+    drivetrain.turn_for(RIGHT, 30, DEGREES)
+    run(1050)
+    run(-1050)
+
+    drivetrain.turn_for(LEFT, 35, DEGREES)
+    run(300)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
     wait(4000, MSEC)
     drivetrain.turn_for(RIGHT, 180, DEGREES)
     run(-300)
-    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    drivetrain.turn_for(LEFT, 35, DEGREES)
     run(-1050)
 
 
@@ -178,5 +189,5 @@ def noop():
     pass
 
 
-# Competition(driver_control, autonomous_skills_back_and_forth)
-autonomous_skills_back_and_forth()
+Competition(driver_control, autonomous_skills_back_and_forth)
+# autonomous_skills_back_and_forth()
